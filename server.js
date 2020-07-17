@@ -5,8 +5,8 @@ const helmet = require("helmet");
 require('dotenv').config();
 
 
-var apiRoutes = require("../marketool/routes/api.js");
-const auth = require("../marketool/routes/auth.js");
+var apiRoutes = require("/routes/api.js");
+const auth = require("/routes/auth.js");
 
 const app = express();
 app.set("view engine", "ejs");
