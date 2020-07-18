@@ -81,12 +81,17 @@
     <input type="text" id="search_term" name="search_term">
     <!-- All search parameters at https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets -->
     <!-- Geo code based search  -->
-    <label for="latitude">Latitude:</label>
-    <input type="text" id="latitude" name="latitude">
-    <label for="longitude">Longitude:</label>
-    <input type="text" id="longitude" name="longitude">
-    <label for="radius">Radius</label>
-    <input type="text" id="radius" name="radius">
+    <label for="city">City:</label>
+    <select id="city" name="city" size="4">
+      <option value = "Any" selected>Any</option>
+      <option value = "India">India</option>
+      <option value = "Mumbai">Mumbai</option>
+      <option value = "Bengaluru">Bengaluru</option>
+      <option value = "Pune">Pune</option>
+      <option value = "Delhi_NCR">Delhi NCR</option>
+      <option value = "Hyderabad">Hyderabad</option>
+      <option value = "Chennai">Chennai</option>
+    </select>
     <label for="language">Language:</label>
     <select id="language" name="language" size="4">
       <option value = "en" selected>English</option>

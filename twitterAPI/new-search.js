@@ -13,16 +13,24 @@ function start(user, body){
         access_token_secret: user.twitterOAuthTokenSecret
         });
 
-        console.log(user, body);
+        let city = {
+            India: "23.473324,77.947998,2500km",
+            Bengaluru: "12.972442,77.580643,1000km",
+            Mumbai:"19.076090,72.877426,1000km",
+            Pune: "18.516726,73.856255,1000km",
+            Delhi_NCR: "28.610001,77.230003,1000km",
+            Hyderabad: "17.387140,78.491684,1000km",
+            Chennai: "13.067439,80.237617,1000km"
+        }
 
         let searchDetails = {
             q: body.search_term,
             result_type: body.result_type,
             count: 200,
         };
-
-        if(body.latitude && body.longitude && body.radius){
-            searchDetails.geocode = `${body.latitude},${body.longigute},${body.radius}`;
+        console.log(body.city, city[body.city]);
+        if(body.city != "Any"){
+            searchDetails.geocode = city[body.city]
         }
         if(body.language){
             searchDetails.language =  body.language
@@ -33,8 +41,6 @@ function start(user, body){
         client
         .get("search/tweets", searchDetails)
         .then((response) => {
-            console.log(response);
-
             resolve(response)
         })
         .catch(err => console.log(err));
